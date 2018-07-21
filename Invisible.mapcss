@@ -6,6 +6,13 @@ meta
     author: "James Ross";
 }
 
+node {
+    symbol-size: 2;
+    symbol-shape: square;
+    symbol-stroke-color: yellow;
+    symbol-fill-color: yellow;
+}
+
 way {
     width: 1;
     color: #404040;
