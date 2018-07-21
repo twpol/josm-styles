@@ -36,7 +36,7 @@ way[railway=platform_edge],
 way[man_made=pier] {
     width: 1;
     color: white;
-    fill-color: white;
+    fill-color: orange;
     fill-opacity: 0.25;
 }
 
