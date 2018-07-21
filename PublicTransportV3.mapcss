@@ -26,6 +26,16 @@ way[highway=road] {
     set highway_for_busses;
 }
 
+way[railway=funicular],
+way[railway=light_rail],
+way[railway=monorail],
+way[railway=narrow_gauge],
+way[railway=rail],
+way[railway=subway],
+way[railway=tram] {
+    set railway_for_trains;
+}
+
 node[highway=bus_stop],
 node[amenity=bus_station],
 node[railway=tram_stop],
@@ -60,20 +70,20 @@ way[man_made=pier] {
     fill-opacity: 0.25;
 }
 
-way[railway],
 way.highway_for_busses,
+way.railway_for_trains,
 way[route=ferry] {
-    width: 3;
-}
-
-relation[type=route][route=train] way[railway] {
-    casing-width: 2;
-    casing-color: yellow;
+    width: 4;
 }
 
 relation[type=route][route=bus] way.highway_for_busses {
     casing-width: 2;
     casing-color: red;
+}
+
+relation[type=route][route=train] way.railway_for_trains {
+    casing-width: 2;
+    casing-color: yellow;
 }
 
 relation[type=route][route=ferry] way[route=ferry] {
