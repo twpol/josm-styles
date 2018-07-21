@@ -6,6 +6,26 @@ meta
     author: "James Ross";
 }
 
+way[highway=motorway],
+way[highway=trunk],
+way[highway=primary],
+way[highway=secondary],
+way[highway=tertiary],
+way[highway=unclassified],
+way[highway=residential],
+way[highway=service],
+way[highway=motorway_link],
+way[highway=trunk_link],
+way[highway=primary_link],
+way[highway=secondary_link],
+way[highway=tertiary_link],
+way[highway=living_street],
+way[highway=track],
+way[highway=bus_guideway],
+way[highway=road] {
+    set highway_for_busses;
+}
+
 node[highway=bus_stop],
 node[amenity=bus_station],
 node[railway=tram_stop],
@@ -41,7 +61,7 @@ way[man_made=pier] {
 }
 
 way[railway],
-way[highway],
+way.highway_for_busses,
 way[route=ferry] {
     width: 3;
 }
@@ -51,7 +71,7 @@ relation[type=route][route=train] way[railway] {
     casing-color: yellow;
 }
 
-relation[type=route][route=bus] way[highway] {
+relation[type=route][route=bus] way.highway_for_busses {
     casing-width: 2;
     casing-color: red;
 }
