@@ -1,0 +1,13 @@
+meta
+{
+    title: "Invisible";
+    description: "Renders all default features in as low-key manner as possible.";
+    version: "0.1";
+    author: "James Ross";
+}
+
+way {
+    width: 1;
+    color: #404040;
+    fill-color: transparent;
+}
