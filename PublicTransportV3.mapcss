@@ -6,6 +6,7 @@ meta
     author: "James Ross";
 }
 
+/* Possible ways for public transport busses */
 way[highway=motorway],
 way[highway=trunk],
 way[highway=primary],
@@ -26,6 +27,7 @@ way[highway=road] {
     set highway_for_busses;
 }
 
+/* Possible ways for public transport trains */
 way[railway=funicular],
 way[railway=light_rail],
 way[railway=monorail],
@@ -36,6 +38,7 @@ way[railway=tram] {
     set railway_for_trains;
 }
 
+/* Public transport stations */
 node[highway=bus_stop],
 node[amenity=bus_station],
 node[railway=tram_stop],
@@ -48,6 +51,7 @@ node[amenity=ferry_terminal] {
     text-halo-color: black;
 }
 
+/* Public transport train stations */
 node[railway=tram_stop],
 node[railway=halt],
 node[railway=station],
@@ -55,11 +59,13 @@ node[aerialway=station] {
     text-color: yellow;
 }
 
+/* Public transport boat stations */
 node[amenity=ferry_terminal] {
     text-color: blue;
     text-halo-color: white;
 }
 
+/* Public transport platforms */
 way[highway=platform],
 way[railway=platform],
 way[railway=platform_edge],
@@ -70,22 +76,26 @@ way[man_made=pier] {
     fill-opacity: 0.25;
 }
 
+/* Ways for public transport */
 way.highway_for_busses,
 way.railway_for_trains,
 way[route=ferry] {
     width: 4;
 }
 
+/* Linked ways for public transport busses */
 relation[type=route][route=bus] way.highway_for_busses {
     casing-width: 2;
     casing-color: red;
 }
 
+/* Linked ways for public transport trains */
 relation[type=route][route=train] way.railway_for_trains {
     casing-width: 2;
     casing-color: yellow;
 }
 
+/* Linked ways for public transport boats */
 relation[type=route][route=ferry] way[route=ferry] {
     casing-width: 2;
     casing-color: blue;
