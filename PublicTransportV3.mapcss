@@ -1,0 +1,62 @@
+meta
+{
+    title: "Public Transport V3";
+    description: "Renders the proposed Public Transport V3 tagging accordingly.";
+    version: "0.1";
+    author: "James Ross";
+}
+
+node[highway=bus_stop],
+node[amenity=bus_station],
+node[railway=tram_stop],
+node[railway=halt],
+node[railway=station],
+node[aerialway=station],
+node[amenity=ferry_terminal] {
+    text-color: red;
+    text-halo-radius: 2;
+    text-halo-color: black;
+}
+
+node[railway=tram_stop],
+node[railway=halt],
+node[railway=station],
+node[aerialway=station] {
+    text-color: yellow;
+}
+
+node[amenity=ferry_terminal] {
+    text-color: blue;
+    text-halo-color: white;
+}
+
+way[highway=platform],
+way[railway=platform],
+way[railway=platform_edge],
+way[man_made=pier] {
+    width: 1;
+    color: white;
+    fill-color: white;
+    fill-opacity: 0.25;
+}
+
+way[railway],
+way[highway],
+way[route=ferry] {
+    width: 3;
+}
+
+relation[type=route][route=train] way[railway] {
+    casing-width: 2;
+    casing-color: yellow;
+}
+
+relation[type=route][route=bus] way[highway] {
+    casing-width: 2;
+    casing-color: red;
+}
+
+relation[type=route][route=ferry] way[route=ferry] {
+    casing-width: 2;
+    casing-color: blue;
+}
