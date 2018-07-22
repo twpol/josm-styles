@@ -2,7 +2,7 @@ meta
 {
     title: "Public Transport V3";
     description: "Renders the proposed Public Transport V3 tagging accordingly.";
-    version: "0.2";
+    version: "0.3";
     author: "James Ross";
 }
 
@@ -48,31 +48,47 @@ node[aerialway=station],
 node[amenity=ferry_terminal] {
     symbol-size: 8;
     symbol-shape: square;
-    symbol-fill-color: red;
+    symbol-fill-color: white;
     symbol-stroke-color: black;
     text: tag("name");
     font-size: 20;
     text-offset-y: -3;
-    text-color: red;
+    text-color: white;
     text-halo-radius: 2;
     text-halo-color: black;
+}
+
+/* Public transport bus stations */
+node[highway=bus_stop],
+node[amenity=bus_station] {
+    symbol-fill-color: #f00;
+    text-color: #f00;
 }
 
 /* Public transport train stations */
 node[railway=tram_stop],
 node[railway=halt],
-node[railway=station],
-node[aerialway=station] {
-    symbol-fill-color: cyan;
-    text-color: cyan;
+node[railway=station] {
+    symbol-fill-color: #fff;
+    text-color: #fff;
+}
+node[railway=station][station=subway] {
+    symbol-fill-color: #00f;
+    text-color: #00f;
+    symbol-stroke-color: white;
+    text-halo-color: white;
 }
 
-/* Public transport boat stations */
+/* Public transport aerialway stations */
+node[aerialway=station] {
+    symbol-fill-color: #642;
+    text-color: #642;
+}
+
+/* Public transport ferry stations */
 node[amenity=ferry_terminal] {
-    symbol-fill-color: blue;
-    symbol-stroke-color: white;
-    text-color: blue;
-    text-halo-color: white;
+    symbol-fill-color: #ff7fbf;
+    text-color: #ff7fbf;
 }
 
 /* Public transport platforms */
@@ -89,6 +105,7 @@ area[!passenger?!][man_made=pier] {
 /* Ways for public transport */
 way.highway_for_busses,
 way.railway_for_trains,
+way[aerialway],
 way[route=ferry] {
     width: 2;
     color: #808080;
@@ -97,18 +114,41 @@ way[route=ferry] {
 /* Linked ways for public transport busses */
 relation[type=route][route=bus] way.highway_for_busses {
     casing-width: 2;
-    casing-color: red;
+    casing-color: #f00;
+}
+relation[type=route][route=trolleybus] way.highway_for_busses {
+    casing-width: 2;
+    casing-color: #b22;
 }
 
 /* Linked ways for public transport trains */
-relation[type=route][route=train] way.railway_for_trains,
+relation[type=route][route=train] way.railway_for_trains {
+    casing-width: 2;
+    casing-color: #fff;
+}
+relation[type=route][route=light_rail] way.railway_for_trains {
+    casing-width: 2;
+    casing-color: #0c0;
+}
 relation[type=route][route=subway] way.railway_for_trains {
     casing-width: 2;
-    casing-color: cyan;
+    casing-color: #00f;
+}
+relation[type=route][route=tram] way.railway_for_trains,
+relation[type=route][route=monorail] way.railway_for_trains,
+relation[type=route][route=funicular] way.railway_for_trains {
+    casing-width: 2;
+    casing-color: #d0f;
 }
 
-/* Linked ways for public transport boats */
+/* Linked ways for public transport aerialways */
+relation[type=route][route=aerialway] way[aerialway] {
+    casing-width: 2;
+    casing-color: #642;
+}
+
+/* Linked ways for public transport ferrys */
 relation[type=route][route=ferry] way[route=ferry] {
     casing-width: 2;
-    casing-color: blue;
+    casing-color: #ff7fbf;
 }
