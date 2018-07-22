@@ -2,11 +2,16 @@ meta
 {
     title: "Invisible";
     description: "Renders all default features in as low-key manner as possible.";
-    version: "0.1";
+    version: "0.2";
     author: "James Ross";
 }
 
-node {
+canvas {
+    default-points: false;
+    default-lines: false;
+}
+
+node|z19- {
     symbol-size: 2;
     symbol-shape: square;
     symbol-stroke-color: yellow;
