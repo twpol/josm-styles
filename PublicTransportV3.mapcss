@@ -90,7 +90,8 @@ area[!passenger?!][man_made=pier] {
 way.highway_for_busses,
 way.railway_for_trains,
 way[route=ferry] {
-    width: 4;
+    width: 2;
+    color: #808080;
 }
 
 /* Linked ways for public transport busses */
