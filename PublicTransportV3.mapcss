@@ -76,10 +76,10 @@ node[amenity=ferry_terminal] {
 }
 
 /* Public transport platforms */
-way[highway=platform],
-way[railway=platform],
-way[railway=platform_edge],
-way[man_made=pier] {
+area[highway=platform],
+area[railway=platform],
+area[railway=platform_edge],
+area[man_made=pier] {
     width: 1;
     color: white;
     fill-color: orange;
