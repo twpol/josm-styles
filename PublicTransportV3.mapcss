@@ -100,7 +100,8 @@ relation[type=route][route=bus] way.highway_for_busses {
 }
 
 /* Linked ways for public transport trains */
-relation[type=route][route=train] way.railway_for_trains {
+relation[type=route][route=train] way.railway_for_trains,
+relation[type=route][route=subway] way.railway_for_trains {
     casing-width: 2;
     casing-color: cyan;
 }
