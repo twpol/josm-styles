@@ -2,7 +2,7 @@ meta
 {
     title: "Public Transport V3";
     description: "Renders the proposed Public Transport V3 tagging accordingly.";
-    version: "0.1";
+    version: "0.2";
     author: "James Ross";
 }
 
@@ -46,6 +46,13 @@ node[railway=halt],
 node[railway=station],
 node[aerialway=station],
 node[amenity=ferry_terminal] {
+    symbol-size: 8;
+    symbol-shape: square;
+    symbol-fill-color: red;
+    symbol-stroke-color: black;
+    text: tag("name");
+    font-size: 20;
+    text-offset-y: -3;
     text-color: red;
     text-halo-radius: 2;
     text-halo-color: black;
@@ -56,11 +63,14 @@ node[railway=tram_stop],
 node[railway=halt],
 node[railway=station],
 node[aerialway=station] {
-    text-color: yellow;
+    symbol-fill-color: cyan;
+    text-color: cyan;
 }
 
 /* Public transport boat stations */
 node[amenity=ferry_terminal] {
+    symbol-fill-color: blue;
+    symbol-stroke-color: white;
     text-color: blue;
     text-halo-color: white;
 }
@@ -92,7 +102,7 @@ relation[type=route][route=bus] way.highway_for_busses {
 /* Linked ways for public transport trains */
 relation[type=route][route=train] way.railway_for_trains {
     casing-width: 2;
-    casing-color: yellow;
+    casing-color: cyan;
 }
 
 /* Linked ways for public transport boats */
