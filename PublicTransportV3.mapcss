@@ -95,7 +95,8 @@ node[amenity=ferry_terminal] {
 area[!passenger?!][highway=platform],
 area[!passenger?!][railway=platform],
 area[!passenger?!][railway=platform_edge],
-area[!passenger?!][man_made=pier] {
+area[!passenger?!][man_made=pier],
+area[!passenger?!][public_transport=platform] {
     width: 1;
     color: white;
     fill-color: orange;
