@@ -1,0 +1,34 @@
+meta
+{
+    title: "Public Transport V3 Validation";
+    description: "Flags validation errors for the proposed Public Transport V3 tagging.";
+    version: "0.1";
+    author: "James Ross";
+}
+
+relation[type=public_transport][public_transport=stop_area] > * {
+    set public_transport_stop_area_inside;
+}
+
+relation[type=multipolygon] > * {
+    set multipolygon_inside;
+}
+
+/* Public transport platforms */
+area[!passenger?!][highway=platform]!.public_transport_stop_area_inside!.multipolygon_inside,
+area[!passenger?!][railway=platform]!.public_transport_stop_area_inside!.multipolygon_inside,
+area[!passenger?!][railway=platform_edge]!.public_transport_stop_area_inside!.multipolygon_inside,
+area[!passenger?!][man_made=pier]!.public_transport_stop_area_inside!.multipolygon_inside,
+area[!passenger?!][public_transport=platform]!.public_transport_stop_area_inside!.multipolygon_inside {
+    casing-color: yellow;
+    casing-width: 10;
+    text: eval("Platform not part of stop area");
+}
+
+/* Public transport stop positions */
+node[public_transport=stop_position]!.public_transport_stop_area_inside {
+    symbol-shape: circle;
+    symbol-color: yellow;
+    symbol-size: 20;
+    text: eval("Stop position not part of stop area");
+}
