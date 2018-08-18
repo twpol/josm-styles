@@ -1,0 +1,12 @@
+meta
+{
+    title: "HOT Waterways";
+    description: "Highlights waterways for mapping HOT projects.";
+    version: "0.1";
+    author: "James Ross";
+}
+
+way[waterway] {
+    color: lightblue;
+    width: 4;
+}

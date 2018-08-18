@@ -1,0 +1,18 @@
+meta
+{
+    title: "HOT Roads";
+    description: "Highlights roads for mapping HOT projects.";
+    version: "0.1";
+    author: "James Ross";
+}
+
+way[highway] {
+    color: orange;
+    width: 4;
+    opacity: 0.5;
+}
+
+way[highway="road"],
+way[highway="path"] {
+    opacity: 1;
+}

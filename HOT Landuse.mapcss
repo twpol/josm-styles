@@ -1,0 +1,15 @@
+meta
+{
+    title: "HOT Landuse";
+    description: "Highlights landuse for mapping HOT projects.";
+    version: "0.1";
+    author: "James Ross";
+}
+
+area[landuse] {
+    color: green;
+    width: 4;
+    opacity: 1;
+    fill-color: green;
+    fill-opacity: 0.5;
+}

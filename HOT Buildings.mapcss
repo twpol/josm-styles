@@ -1,0 +1,20 @@
+meta
+{
+    title: "HOT Buildings";
+    description: "Highlights buildings for mapping HOT projects.";
+    version: "0.1";
+    author: "James Ross";
+}
+
+area[building] {
+    color: black;
+    width: 1;
+    opacity: 0.5;
+    fill-color: grey;
+    fill-opacity: 0.5;
+}
+
+area[building="yes"] {
+    opacity: 1;
+    fill-opacity: 0.75;
+}
