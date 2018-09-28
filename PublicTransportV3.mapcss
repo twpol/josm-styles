@@ -2,7 +2,7 @@ meta
 {
     title: "Public Transport V3";
     description: "Renders the proposed Public Transport V3 tagging accordingly.";
-    version: "0.3";
+    version: "0.4";
     author: "James Ross";
 }
 
@@ -50,7 +50,7 @@ node[amenity=ferry_terminal] {
     symbol-shape: square;
     symbol-fill-color: white;
     symbol-stroke-color: black;
-    text: tag("name");
+    text: auto;
     font-size: 20;
     text-offset-y: -3;
     text-color: white;
