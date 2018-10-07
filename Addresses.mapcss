@@ -1,0 +1,23 @@
+meta
+{
+    title: "Addresses";
+    description: "Renders addresses.";
+    version: "0.1";
+    author: "James Ross";
+}
+
+way[postal_code] {
+    casing-color: white;
+    casing-width: 1;
+    casing-opacity: 0.4;
+    text: replace(tag("postal_code"), ";", " + ");
+    text-color: yellow;
+    text-halo-color: black;
+    text-halo-radius: 1;
+    font-size: 16;
+}
+
+way[postal_code=~/ /] {
+    casing-opacity: 0.8;
+    text-color: white;
+}
