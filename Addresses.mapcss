@@ -23,3 +23,14 @@ way[area=yes][postal_code=~/ /] {
     casing-opacity: 0.8;
     text-color: white;
 }
+
+way[addr:housenumber],
+way[addr:housename] {
+    set addr_house;
+}
+
+way.addr_house[!addr:street][!addr:district][!addr:neighbourhood][!addr:quarter][!addr:suburb][!addr:place][!addr:hamlet] {
+    casing-color: yellow;
+    casing-width: 10;
+    text: eval("House with number/name must have more to its address");
+}
