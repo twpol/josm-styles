@@ -6,7 +6,8 @@ meta
     author: "James Ross";
 }
 
-way[postal_code] {
+way[highway][postal_code],
+way[area=yes][postal_code] {
     casing-color: white;
     casing-width: 1;
     casing-opacity: 0.4;
@@ -17,7 +18,8 @@ way[postal_code] {
     font-size: 16;
 }
 
-way[postal_code=~/ /] {
+way[highway][postal_code=~/ /],
+way[area=yes][postal_code=~/ /] {
     casing-opacity: 0.8;
     text-color: white;
 }
