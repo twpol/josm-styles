@@ -1,9 +1,30 @@
 meta
 {
     title: "Addresses";
-    description: "Renders addresses with some limited validation.";
-    version: "0.2";
+    description: "Renders admin boundaries and addresses with some limited validation.";
+    version: "0.3";
     author: "James Ross";
+}
+
+way[boundary=administrative][admin_level],
+relation[type=boundary][boundary=administrative][admin_level] > way {
+    color: blue;
+}
+
+way[boundary=administrative][admin_level=11], relation[type=boundary][boundary=administrative][admin_level=11] > way { width: 1; dashes: 1,1; }
+way[boundary=administrative][admin_level=10], relation[type=boundary][boundary=administrative][admin_level=10] > way { width: 1; dashes: 2,1; }
+way[boundary=administrative][admin_level= 9], relation[type=boundary][boundary=administrative][admin_level= 9] > way { width: 1; dashes: 3,1; }
+way[boundary=administrative][admin_level= 8], relation[type=boundary][boundary=administrative][admin_level= 8] > way { width: 1; dashes: 4,1; }
+way[boundary=administrative][admin_level= 7], relation[type=boundary][boundary=administrative][admin_level= 7] > way { width: 1; dashes: 5,1; }
+way[boundary=administrative][admin_level= 6], relation[type=boundary][boundary=administrative][admin_level= 6] > way { width: 2; dashes: 1,0; }
+way[boundary=administrative][admin_level= 5], relation[type=boundary][boundary=administrative][admin_level= 5] > way { width: 3; dashes: 1,0; }
+way[boundary=administrative][admin_level= 4], relation[type=boundary][boundary=administrative][admin_level= 4] > way { width: 4; dashes: 1,0; }
+way[boundary=administrative][admin_level= 3], relation[type=boundary][boundary=administrative][admin_level= 3] > way { width: 5; dashes: 1,0; }
+way[boundary=administrative][admin_level= 2], relation[type=boundary][boundary=administrative][admin_level= 2] > way { width: 6; dashes: 1,0; }
+
+way[boundary=administrative][admin_level][disputed=yes],
+relation[type=boundary][boundary=administrative][admin_level][disputed=yes] > way {
+    color: red;
 }
 
 way[highway][postal_code],
