@@ -1,8 +1,8 @@
 meta
 {
     title: "Addresses";
-    description: "Renders addresses.";
-    version: "0.1";
+    description: "Renders addresses with some limited validation.";
+    version: "0.2";
     author: "James Ross";
 }
 
