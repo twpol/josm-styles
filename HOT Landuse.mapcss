@@ -13,3 +13,7 @@ area[landuse] {
     fill-color: green;
     fill-opacity: 0.5;
 }
+
+area|z1-16[landuse] {
+    width: 0;
+}
