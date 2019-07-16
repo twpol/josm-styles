@@ -1,0 +1,45 @@
+meta
+{
+    title: "POIs";
+    description: "Renders POIs.";
+    version: "0.1";
+    author: "James Ross";
+}
+
+node[amenity],
+node[craft],
+node[shop],
+node[leisure],
+node[tourism] {
+    set poi;
+    symbol-fill-color: #00f;
+}
+
+node[public_transport],
+node[railway] {
+    set poi;
+    symbol-fill-color: #f00;
+}
+
+node[geological],
+node[historic],
+node[natural] {
+    set poi;
+    symbol-fill-color: #0f0;
+}
+
+node[office],
+node[emergency],
+node[man_made],
+node[military],
+node[power],
+node[telecom] {
+    set poi;
+    symbol-fill-color: #fff;
+}
+
+node.poi {
+    symbol-size: 8;
+    symbol-shape: square;
+    symbol-stroke-color: #000;
+}
