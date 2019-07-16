@@ -7,39 +7,208 @@ meta
 }
 
 node[amenity],
+node[proposed:amenity],
+node[planned:amenity],
+node[construction:amenity],
+node[disused:amenity],
+node[abandoned:amenity],
+node[demolished:amenity],
+node[removed:amenity],
+node[razed:amenity],
+node[was:amenity],
 node[craft],
+node[proposed:craft],
+node[planned:craft],
+node[construction:craft],
+node[disused:craft],
+node[abandoned:craft],
+node[demolished:craft],
+node[removed:craft],
+node[razed:craft],
+node[was:craft],
 node[shop],
+node[proposed:shop],
+node[planned:shop],
+node[construction:shop],
+node[disused:shop],
+node[abandoned:shop],
+node[demolished:shop],
+node[removed:shop],
+node[razed:shop],
+node[was:shop],
 node[leisure],
-node[tourism] {
+node[proposed:leisure],
+node[planned:leisure],
+node[construction:leisure],
+node[disused:leisure],
+node[abandoned:leisure],
+node[demolished:leisure],
+node[removed:leisure],
+node[razed:leisure],
+node[was:leisure],
+node[tourism],
+node[proposed:tourism],
+node[planned:tourism],
+node[construction:tourism],
+node[disused:tourism],
+node[abandoned:tourism],
+node[demolished:tourism],
+node[removed:tourism],
+node[razed:tourism],
+node[was:tourism] {
     set poi;
-    symbol-fill-color: #00f;
+    symbol-fill-color: #0ff; /* amenity, etc. */
 }
 
 node[public_transport],
-node[railway] {
+node[proposed:public_transport],
+node[planned:public_transport],
+node[construction:public_transport],
+node[disused:public_transport],
+node[abandoned:public_transport],
+node[demolished:public_transport],
+node[removed:public_transport],
+node[razed:public_transport],
+node[was:public_transport],
+node[railway],
+node[proposed:railway],
+node[planned:railway],
+node[construction:railway],
+node[disused:railway],
+node[abandoned:railway],
+node[demolished:railway],
+node[removed:railway],
+node[razed:railway],
+node[was:railway] {
     set poi;
-    symbol-fill-color: #f00;
+    symbol-fill-color: #f00; /* public_transport, etc. */
 }
 
 node[geological],
+node[proposed:geological],
+node[planned:geological],
+node[construction:geological],
+node[disused:geological],
+node[abandoned:geological],
+node[demolished:geological],
+node[removed:geological],
+node[razed:geological],
+node[was:geological],
 node[historic],
-node[natural] {
+node[proposed:historic],
+node[planned:historic],
+node[construction:historic],
+node[disused:historic],
+node[abandoned:historic],
+node[demolished:historic],
+node[removed:historic],
+node[razed:historic],
+node[was:historic],
+node[natural],
+node[proposed:natural],
+node[planned:natural],
+node[construction:natural],
+node[disused:natural],
+node[abandoned:natural],
+node[demolished:natural],
+node[removed:natural],
+node[razed:natural],
+node[was:natural] {
     set poi;
-    symbol-fill-color: #0f0;
+    symbol-fill-color: #0f0; /* geological, etc. */
 }
 
+node[office],
+node[proposed:office],
+node[planned:office],
+node[construction:office],
+node[disused:office],
+node[abandoned:office],
+node[demolished:office],
+node[removed:office],
+node[razed:office],
+node[was:office],
+node[emergency],
+node[proposed:emergency],
+node[planned:emergency],
+node[construction:emergency],
+node[disused:emergency],
+node[abandoned:emergency],
+node[demolished:emergency],
+node[removed:emergency],
+node[razed:emergency],
+node[was:emergency],
+node[man_made],
+node[proposed:man_made],
+node[planned:man_made],
+node[construction:man_made],
+node[disused:man_made],
+node[abandoned:man_made],
+node[demolished:man_made],
+node[removed:man_made],
+node[razed:man_made],
+node[was:man_made],
+node[military],
+node[proposed:military],
+node[planned:military],
+node[construction:military],
+node[disused:military],
+node[abandoned:military],
+node[demolished:military],
+node[removed:military],
+node[razed:military],
+node[was:military],
+node[power],
+node[proposed:power],
+node[planned:power],
+node[construction:power],
+node[disused:power],
+node[abandoned:power],
+node[demolished:power],
+node[removed:power],
+node[razed:power],
+node[was:power],
+node[telecom],
+node[proposed:telecom],
+node[planned:telecom],
+node[construction:telecom],
+node[disused:telecom],
+node[abandoned:telecom],
+node[demolished:telecom],
+node[removed:telecom],
+node[razed:telecom],
+node[was:telecom] {
+    set poi;
+    symbol-fill-color: #fff; /* office, etc. */
+}
+
+node[amenity],
+node[craft],
+node[shop],
+node[leisure],
+node[tourism],
+node[public_transport],
+node[railway],
+node[geological],
+node[historic],
+node[natural],
 node[office],
 node[emergency],
 node[man_made],
 node[military],
 node[power],
 node[telecom] {
-    set poi;
-    symbol-fill-color: #fff;
+    set active;
 }
 
 node.poi {
-    symbol-size: 8;
-    symbol-shape: square;
-    symbol-stroke-color: #000;
+    symbol-size: 12;
+    symbol-shape: circle;
+    symbol-stroke-width: 2;
+    symbol-stroke-color: #000; /* inactive */
+}
+
+node.poi.active {
+    symbol-stroke-width: 0;
+    symbol-stroke-color: none; /* active */
 }
