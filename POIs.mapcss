@@ -115,7 +115,7 @@ node[removed:natural],
 node[razed:natural],
 node[was:natural] {
     set poi;
-    symbol-fill-color: #0f0; /* geological, etc. */
+    symbol-fill-color: #6f0; /* geological, etc. */
 }
 
 node[office],
@@ -179,7 +179,7 @@ node[removed:telecom],
 node[razed:telecom],
 node[was:telecom] {
     set poi;
-    symbol-fill-color: #fff; /* office, etc. */
+    symbol-fill-color: #f90; /* office, etc. */
 }
 
 node[amenity],
