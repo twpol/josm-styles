@@ -1,0 +1,24 @@
+meta
+{
+    title: "Modified";
+    description: "Highlights modified objects.";
+    version: "0.1";
+    author: "James Ross";
+}
+
+node:modified::modified_layer {
+    z-index: -1;
+    symbol-shape: circle;
+    symbol-size: 24;
+    symbol-fill-color: #FFFF00;
+    symbol-fill-opacity: 0.25;
+}
+
+way:modified::modified_layer,
+node:modified < way::modified_layer 
+{
+    z-index: -1;
+    width: 24;
+    color: #FFFF00;
+    opacity: 0.25;
+}
