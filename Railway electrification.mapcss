@@ -1,0 +1,44 @@
+meta
+{
+    title: "Railway electrification";
+    description: "Renders railway electrification properties.";
+    version: "0.1";
+    author: "James Ross";
+}
+
+/* Possible ways for public transport trains */
+way[railway=funicular],
+way[railway=light_rail],
+way[railway=monorail],
+way[railway=narrow_gauge],
+way[railway=rail],
+way[railway=subway],
+way[railway=tram] {
+    set railway_for_trains;
+}
+
+way {
+    width: 0;
+}
+
+way.railway_for_trains {
+    width: 4;
+    color: #808080;
+}
+
+way.railway_for_trains[electrified=rail],
+way.railway_for_trains[electrified=contact_line] {
+    color: #f00;
+}
+
+way.railway_for_trains[electrified=rail][voltage=630] {
+    color: #ff0;
+}
+
+way.railway_for_trains[electrified=rail][voltage=750] {
+    color: #0c0;
+}
+
+way.railway_for_trains[electrified=contact_line][voltage=25000] {
+    color: #00f;
+}
