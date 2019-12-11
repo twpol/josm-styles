@@ -2,7 +2,7 @@ meta
 {
     title: "POIs";
     description: "Renders POIs.";
-    version: "0.1";
+    version: "0.2";
     author: "James Ross";
 }
 
@@ -16,6 +16,16 @@ node[demolished:amenity],
 node[removed:amenity],
 node[razed:amenity],
 node[was:amenity],
+node[healthcare],
+node[proposed:healthcare],
+node[planned:healthcare],
+node[construction:healthcare],
+node[disused:healthcare],
+node[abandoned:healthcare],
+node[demolished:healthcare],
+node[removed:healthcare],
+node[razed:healthcare],
+node[was:healthcare],
 node[craft],
 node[proposed:craft],
 node[planned:craft],
@@ -183,6 +193,7 @@ node[was:telecom] {
 }
 
 node[amenity],
+node[healthcare],
 node[craft],
 node[shop],
 node[leisure],
