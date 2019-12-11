@@ -1,0 +1,123 @@
+meta
+{
+    title: "General";
+    description: "Renders general map features for browsing.";
+    version: "0.1";
+    author: "James Ross";
+}
+
+/* Ways for road vehicles */
+way[highway=motorway],
+way[highway=trunk],
+way[highway=primary],
+way[highway=secondary],
+way[highway=tertiary],
+way[highway=unclassified],
+way[highway=residential],
+way[highway=service],
+way[highway=motorway_link],
+way[highway=trunk_link],
+way[highway=primary_link],
+way[highway=secondary_link],
+way[highway=tertiary_link],
+way[highway=living_street],
+way[highway=track],
+way[highway=bus_guideway],
+way[highway=road] {
+    width: 2;
+    color: #C0C0C0;
+}
+
+/* Ways for trains */
+way[railway=funicular],
+way[railway=light_rail],
+way[railway=monorail],
+way[railway=narrow_gauge],
+way[railway=rail],
+way[railway=subway],
+way[railway=tram] {
+    width: 2;
+    color: #ffffff;
+}
+
+/* Ways for aerial and ferrys */
+way[aerialway],
+way[route=ferry] {
+    width: 2;
+    color: #808080;
+}
+
+/* Tunnels */
+way[tunnel=yes] {
+    dashes: 3,1;
+}
+
+/* Bridges */
+way[bridge=yes] {
+    width: 4;
+}
+
+/* Public transport stations */
+node[highway=bus_stop],
+node[amenity=bus_station],
+node[railway=tram_stop],
+node[railway=halt],
+node[railway=station],
+node[aerialway=station],
+node[amenity=ferry_terminal] {
+    symbol-size: 8;
+    symbol-shape: square;
+    symbol-fill-color: white;
+    symbol-stroke-color: black;
+    text: auto;
+    font-size: 20;
+    text-offset-y: -3;
+    text-color: white;
+    text-halo-radius: 2;
+    text-halo-color: black;
+}
+
+/* Public transport bus stations */
+node[highway=bus_stop],
+node[amenity=bus_station] {
+    symbol-fill-color: #f00;
+    text-color: #f00;
+}
+
+/* Public transport train stations */
+node[railway=tram_stop],
+node[railway=halt],
+node[railway=station] {
+    symbol-fill-color: #fff;
+    text-color: #fff;
+}
+node[railway=station][station=subway] {
+    symbol-fill-color: #00f;
+    text-color: #00f;
+    symbol-stroke-color: white;
+    text-halo-color: white;
+}
+
+/* Public transport aerialway stations */
+node[aerialway=station] {
+    symbol-fill-color: #642;
+    text-color: #642;
+}
+
+/* Public transport ferry stations */
+node[amenity=ferry_terminal] {
+    symbol-fill-color: #ff7fbf;
+    text-color: #ff7fbf;
+}
+
+/* Public transport platforms */
+area[!passenger?!][highway=platform],
+area[!passenger?!][railway=platform],
+area[!passenger?!][railway=platform_edge],
+area[!passenger?!][man_made=pier],
+area[!passenger?!][public_transport=platform] {
+    width: 1;
+    color: white;
+    fill-color: orange;
+    fill-opacity: 0.25;
+}
