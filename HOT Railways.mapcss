@@ -1,0 +1,12 @@
+meta
+{
+    title: "HOT Railways";
+    description: "Highlights railways for mapping HOT projects.";
+    version: "0.1";
+    author: "James Ross";
+}
+
+way[railway] {
+    color: red;
+    width: 4;
+}
