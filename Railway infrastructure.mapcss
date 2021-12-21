@@ -1,0 +1,77 @@
+meta
+{
+    title: "Railway infrastructure";
+    description: "Renders railway infrastructure properties.";
+    version: "0.1";
+    author: "James Ross";
+}
+
+/* Possible ways for public transport trains */
+way[railway=funicular],
+way[railway=light_rail],
+way[railway=monorail],
+way[railway=narrow_gauge],
+way[railway=rail],
+way[railway=subway],
+way[railway=tram] {
+    set railway_for_trains;
+}
+
+way {
+    width: 0;
+}
+
+way.railway_for_trains {
+    width: 4;
+    color: #808080;
+    opacity: 0.25;
+}
+
+way.railway_for_trains[usage] {
+    opacity: 1.0;
+}
+
+way.railway_for_trains[usage=main] {
+    color: #fff;
+}
+
+way.railway_for_trains[usage=branch] {
+    color: #00f;
+}
+
+way.railway_for_trains[usage=tourism] {
+    color: #f00;
+}
+
+way.railway_for_trains[usage=industrial] {
+    color: #ff0;
+}
+
+way.railway_for_trains[usage=military] {
+    color: #f0f;
+}
+
+way.railway_for_trains[usage=test] {
+    color: #0ff;
+}
+
+way.railway_for_trains[service] {
+    opacity: 1.0;
+    dashes: 4;
+}
+
+way.railway_for_trains[service=crossover] {
+    color: #f00;
+}
+
+way.railway_for_trains[service=siding] {
+    color: #0f0;
+}
+
+way.railway_for_trains[service=spur] {
+    color: #0ff;
+}
+
+way.railway_for_trains[service=yard] {
+    color: #00f;
+}

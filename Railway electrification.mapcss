@@ -2,7 +2,7 @@ meta
 {
     title: "Railway electrification";
     description: "Renders railway electrification properties.";
-    version: "0.1";
+    version: "0.2";
     author: "James Ross";
 }
 
@@ -26,19 +26,40 @@ way.railway_for_trains {
     color: #808080;
 }
 
-way.railway_for_trains[electrified=rail],
+way.railway_for_trains[electrified] {
+    dashes: 4;
+    opacity: 0.2;
+}
+
+way.railway_for_trains[electrified=rail] {
+    color: #f0f;
+}
+
 way.railway_for_trains[electrified=contact_line] {
-    color: #f00;
+    color: #0ff;
 }
 
-way.railway_for_trains[electrified=rail][voltage=630] {
-    color: #ff0;
+way.railway_for_trains[electrified][voltage] {
+    dashes: 0;
+    opacity: 1.0;
 }
 
-way.railway_for_trains[electrified=rail][voltage=750] {
-    color: #0c0;
+way.railway_for_trains[voltage<25000] {
+    opacity: 0.9;
 }
 
-way.railway_for_trains[electrified=contact_line][voltage=25000] {
-    color: #00f;
+way.railway_for_trains[voltage<15000] {
+    opacity: 0.8;
+}
+
+way.railway_for_trains[voltage<3000] {
+    opacity: 0.7;
+}
+
+way.railway_for_trains[voltage<1500] {
+    opacity: 0.6;
+}
+
+way.railway_for_trains[voltage<750] {
+    opacity: 0.5;
 }
