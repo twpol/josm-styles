@@ -1,0 +1,69 @@
+meta
+{
+    title: "Railway gauge";
+    description: "Renders railway gauge properties.";
+    version: "0.1";
+    author: "James Ross";
+}
+
+/* Possible ways for public transport trains */
+way[railway=funicular],
+way[railway=light_rail],
+way[railway=monorail],
+way[railway=narrow_gauge],
+way[railway=rail],
+way[railway=subway],
+way[railway=tram] {
+    set railway_for_trains;
+}
+
+way {
+    width: 0;
+}
+
+way.railway_for_trains {
+    width: 4;
+    color: #808080;
+    opacity: 0.25;
+}
+
+way.railway_for_trains[gauge] {
+    opacity: 1.0;
+    color: #b0b0b0;
+}
+
+way.railway_for_trains[gauge>=600] {
+    color: #e5c4a1;
+}
+
+way.railway_for_trains[gauge>=750] {
+    color: #ff8a37;
+}
+
+way.railway_for_trains[gauge>=891] {
+    color: #e1392f;
+}
+
+way.railway_for_trains[gauge>=1000] {
+    color: #c55e8d;
+}
+
+way.railway_for_trains[gauge>=1067] {
+    color: #6a51b7;
+}
+
+way.railway_for_trains[gauge>=1435] {
+    color: #568dd0;
+}
+
+way.railway_for_trains[gauge>=1450] {
+    color: #148a37;
+}
+
+way.railway_for_trains[gauge>=1581] {
+    color: #5abf56;
+}
+
+way.railway_for_trains[gauge>=1638] {
+    color: #bbdf94;
+}
